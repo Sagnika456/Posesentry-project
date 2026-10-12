@@ -36,6 +36,8 @@ public:
 private:
   double actor_x_, actor_y_, actor_z_ = 1.0;
   double cam_x_, cam_y_, cam_z_, cam_yaw_;
+  double total_error_ = 0.0;
+  int error_count_ = 0;
   int img_width_, img_height_;
   double h_fov_;
 
@@ -112,9 +114,13 @@ private:
     error_msg.data = error;
     error_pub_->publish(error_msg);
 
+    total_error_ += error;
+    error_count_++;
+    double avg_error = total_error_ / error_count_;
+
     RCLCPP_INFO(this->get_logger(),
-      "GT pixel: (%.1f, %.1f) | Detected center: (%.1f, %.1f) | Error: %.2f px",
-      gt_px, gt_py, detected_x, detected_y, error);
+      "Error: %.2f px | Running Average (%d frames): %.2f px",
+      error, error_count_, avg_error);
   }
 
   rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr gt_pub_;
