@@ -1,0 +1,370 @@
+data: STANDING
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: FALLEN
+---
+data: BENDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: BENDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: FALLEN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: STANDING
+---
+data: STANDING
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: UNKNOWN
+---
+data: BENDING
+---
