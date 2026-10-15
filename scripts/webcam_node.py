@@ -9,7 +9,10 @@ class WebcamPublisher(Node):
         super().__init__('webcam_publisher')
         self.publisher_ = self.create_publisher(Image, '/camera', 10)
         self.bridge = CvBridge()
-        self.cap = cv2.VideoCapture(0)
+        self.cap = cv2.VideoCapture(0, cv2.CAP_V4L2)
+        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         if not self.cap.isOpened():
             self.get_logger().error('Could not open webcam (/dev/video0)')
         else:
