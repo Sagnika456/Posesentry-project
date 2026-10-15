@@ -12,6 +12,7 @@ The pipeline detects 15 body keypoints from a camera image using a pretrained **
 - **Skeleton overlay**: annotated image published as a ROS2 topic
 - **Posture classification and fall detection**: based on neck and hip keypoint angles
 - **Accuracy evaluation**: pixel error against the simulated actor's ground-truth position, with a running average
+- **Data analysis**: logged results turned into graphs with a Python script
 - **Simulation input**: Gazebo world with a walking actor and a virtual camera
 - **Real camera input**: webcam publisher that feeds the same pipeline
 
@@ -44,7 +45,7 @@ The pose node only subscribes to `/camera`, so it does not care whether the imag
 | `/camera` | `sensor_msgs/Image` | Input image (from Gazebo bridge or webcam) |
 | `/pose_estimation/annotated_image` | `sensor_msgs/Image` | Camera image with the skeleton drawn on it |
 | `/pose_estimation/keypoints` | `geometry_msgs/PoseArray` | Detected keypoints, in image pixel coordinates |
-| `/human/posture_status` | `std_msgs/String` | Posture label such as `STANDING` or `UNKNOWN` |
+| `/human/posture_status` | `std_msgs/String` | Posture label: `STANDING`, `BENDING`, `FALLEN` or `UNKNOWN` |
 | `/human/fall_detected` | `std_msgs/Bool` | `true` when a fall is detected |
 | `/pose_estimation/accuracy_error` | ROS2 message | Pixel error against ground truth |
 | `/ground_truth/actor_position` | ROS2 message | Actor position from the known trajectory |
@@ -62,6 +63,7 @@ human_pose_estimation/
 │   └── webcam_node.py             # real webcam publisher to /camera
 ├── worlds/
 │   └── human_pose_world.sdf       # Gazebo world (actor + camera)
+├── analysis/                      # logs, graphs and analyze.py
 ├── models/                        # OpenPose MPI model files (see below)
 ├── CMakeLists.txt
 └── package.xml
@@ -74,6 +76,7 @@ human_pose_estimation/
 - Ubuntu with **ROS2** (developed on `lyrical`) and **Gazebo** (`gz sim`)
 - Packages: `ros_gz_bridge`, `rqt_image_view`, `cv_bridge`, `image_transport`, OpenCV (with DNN module)
 - Python 3 with OpenCV (for the webcam script)
+- Python 3 with `pandas` and `matplotlib` (for the analysis script)
 
 ### Model files
 
@@ -161,6 +164,40 @@ ros2 run rqt_image_view rqt_image_view
 ```
 
 Stand far enough from the camera that your whole body is in frame.
+
+---
+
+## Data analysis
+
+The `analysis/` folder holds the logged data, the script and the graphs:
+
+- `gt_log.txt`: raw output of `ground_truth_node`
+- `posture_log.txt`: logged `/human/posture_status` readings
+- `accuracy_data.csv`: the extracted error values
+- `analyze.py`: script that reads the logs and creates the graphs
+- Five graphs: error per frame, running average, error histogram, error box plot, posture counts
+
+To record new data and rebuild the graphs:
+
+```bash
+cd ~/analysis
+ros2 run human_pose_estimation ground_truth_node 2>&1 | tee gt_log.txt
+ros2 topic echo /human/posture_status > posture_log.txt
+python3 analyze.py
+```
+
+**Results from 36 frames in simulation**
+
+| Statistic | Error (px) |
+|---|---|
+| Mean | 3,885 |
+| Median | 2,467 |
+| Minimum | 1,312 |
+| Maximum | 16,977 |
+
+Posture readings (108 in total): 91 `STANDING`, 14 `UNKNOWN`, 2 `BENDING` and 1 `FALLEN`.
+
+The error values are large because the ground-truth projection is not calibrated to the camera. A few large spikes pull the mean above the median.
 
 ---
 
